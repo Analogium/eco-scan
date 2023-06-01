@@ -48,6 +48,11 @@ class Product
     #[Groups(['create', 'update'])]
     private ?float $electricVoltage = null;
 
+    #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Groups(['create', 'update'])]
+    private ?string $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -121,6 +126,18 @@ class Product
     public function setElectricVoltage(float $electricVoltage): self
     {
         $this->electricVoltage = $electricVoltage;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }
