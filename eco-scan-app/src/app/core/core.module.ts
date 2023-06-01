@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './components/nav/nav.component';
 import { CscanComponent } from './components/cscan/cscan.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
+import { PageHomeComponent } from './components/page-home/page-home.component';
 
 
 
@@ -11,7 +12,8 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
   declarations: [
     NavComponent,
     CscanComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    PageHomeComponent
     
   ],
   imports: [
@@ -21,6 +23,7 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
   exports: [
     NavComponent,
     CscanComponent,
-    SidemenuComponent]
+    SidemenuComponent,
+    PageHomeComponent]
 })
 export class CoreModule { }

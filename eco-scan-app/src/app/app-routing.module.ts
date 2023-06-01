@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageHomeComponent } from './home/page-home/page-home.component';
+import { PageHomeComponent } from './core/components/page-home/page-home.component';
+import { CscanComponent } from './core/components/cscan/cscan.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: PageHomeComponent },
+  { path: '', component: CscanComponent },
   { path: 'home', component: PageHomeComponent },
   {
     path: '**',
