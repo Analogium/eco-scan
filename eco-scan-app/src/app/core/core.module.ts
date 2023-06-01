@@ -10,6 +10,7 @@ import { ScanComponent } from './components/scan/scan.component';
   declarations: [
     NavComponent,
     ScanComponent
+    
   ],
   imports: [
     CommonModule
