@@ -6,8 +6,10 @@
         <button class="hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded">
             Scan
         </button>
-        <button class="hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded">
+        <button class="hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded" (click)="toggleSidemenu()">
             Historique
         </button>
+
+        <app-sidemenu [isOpen]="sidemenuOpen"></app-sidemenu>
     </div>
 </nav>

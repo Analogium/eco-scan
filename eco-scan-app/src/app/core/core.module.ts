@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './components/nav/nav.component';
 import { ScanComponent } from './components/scan/scan.component';
+import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 
 
 
@@ -9,7 +10,8 @@ import { ScanComponent } from './components/scan/scan.component';
 @NgModule({
   declarations: [
     NavComponent,
-    ScanComponent
+    ScanComponent,
+    SidemenuComponent
     
   ],
   imports: [
@@ -17,6 +19,7 @@ import { ScanComponent } from './components/scan/scan.component';
   ],
   exports: [
     NavComponent,
-    ScanComponent]
+    ScanComponent,
+    SidemenuComponent]
 })
 export class CoreModule { }

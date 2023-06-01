@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  sidemenuOpen = false;
+
+  toggleSidemenu() {
+    this.sidemenuOpen = !this.sidemenuOpen;
+  }
 }
