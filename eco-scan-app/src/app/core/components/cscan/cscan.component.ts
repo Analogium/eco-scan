@@ -21,6 +21,7 @@ export class CscanComponent {
       this.http.get('http://localhost:8000/api/product/best/' + barcode)
         .pipe(
           catchError((error) => {
+            alert('Le produit n\'existe pas dans la base de données');
             console.error(error);
             return new Observable<any>(); // Retourne un observable vide en cas d'erreur
           })
@@ -35,10 +36,10 @@ export class CscanComponent {
           } else {
             parsedData = [response];
           }
+          window.location.href = '/product/' + this.barcodeInput;
           localStorage.setItem('data', JSON.stringify(parsedData));
           localStorage.setItem('barcode', barcode);
         });
-        window.location.href = '/product/' + this.barcodeInput;
     }
   }
 
