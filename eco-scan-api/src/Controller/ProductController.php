@@ -23,7 +23,7 @@ class ProductController extends AbstractController
     {}
 
 
-    #[Route('/', name: 'index', methods: ['GET'])]
+    #[Route('/', name: 'index', methods: ['GET', 'OPTIONS'])]
     #[OA\Response(
         response: 200,
         description: "Success",
@@ -42,7 +42,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'show', methods: ['GET'])]
+    #[Route('/{id}', name: 'show', methods: ['GET', 'OPTIONS'])]
     #[OA\Response(
         response: 200,
         description: "Success",
@@ -253,7 +253,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/best/{barcode}', name: 'best', methods: ['GET'])]
+    #[Route('/best/{barcode}', name: 'best', methods: ['GET', 'OPTIONS'])]
     #[OA\Response(
         response: 200,
         description: "Success",
