@@ -24,7 +24,7 @@ export class SidemenuComponent implements OnInit {
   }
 
   getData() {
-    this.http.get('http://localhost:8000/api/doc/product')
+    this.http.get('http://localhost:8000/api/product')
       .pipe(
         catchError((error) => {
           console.error(error);
