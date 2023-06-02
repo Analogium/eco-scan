@@ -1,1 +1,16 @@
-<p>cscan works!</p>
+<div class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <h1 class="text-2xl font-bold mb-4">Code bar de votre appareil</h1>
+
+    <div class="flex items-center border border-gray-300 rounded-lg p-2">
+        <label for="code-bar-input" class="mr-2">Code bar :</label>
+        <input type="text" id="code-bar-input" [(ngModel)]="barcodeInput" name="code-bar"
+            placeholder="Entrez le code bar de votre appareil" class="outline-none">
+    </div>
+
+    <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="getCompare()">
+        Comparer
+    </button>
+
+    <!-- Autres éléments HTML de votre page -->
+
+</div>
