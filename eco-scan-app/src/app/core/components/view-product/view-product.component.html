@@ -1,34 +1,32 @@
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-4">Caractéristiques électriques</h1>
-  
+    <h1 class="text-3xl font-bold mb-4 text-center" [innerHTML]="name"></h1>
+    <h2 class="text-2xl font-bold mb-4">Caractéristiques électriques</h2>
     <div class="mb-6">
       <label class="block text-sm font-bold mb-2">Puissance électrique</label>
       <div class="bg-gray-200 rounded-full h-4">
         <div class="bg-green-500 rounded-full h-4" [style.width.%]="electricPower" [style.max-width.%]="100"></div>
       </div>
     </div>
-  
     <div class="mb-6">
       <label class="block text-sm font-bold mb-2">Courant électrique</label>
       <div class="bg-gray-200 rounded-full h-4">
         <div class="bg-blue-500 rounded-full h-4" [style.width.%]="electricCurrent" [style.max-width.%]="100"></div>
       </div>
     </div>
-  
+
     <div class="mb-6">
       <label class="block text-sm font-bold mb-2">Tension électrique</label>
       <div class="bg-gray-200 rounded-full h-4">
         <div class="bg-purple-500 rounded-full h-4" [style.width.%]="electricVoltage" [style.max-width.%]="100"></div>
       </div>
     </div>
-  
-    <div class="mb-6" >
+
+    <div class="mb-6" *ngIf="this.bestProduct">
       <label class="block text-sm font-bold mb-2">Produit recommandé</label>
       <div class="flex items-center"[class.hover:bg-gray-200]="true" (click)="redirecttobestproduct()">
         <div class="w-12 h-12 bg-green-500 rounded-full mr-2"></div>
         <p class="text-sm" [innerHTML]="bestProduct" ></p>
       </div>
-      
+
     </div>
   </div>
-  

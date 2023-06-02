@@ -27,6 +27,11 @@ export class SidemenuComponent implements OnInit {
     if(this.data)
       this.data = JSON.parse(this.data);
     console.log(this.data);
-    
+
+  }
+
+  goToProduct(barcode: string) {
+    localStorage.setItem('barcode', barcode);
+    window.location.href = '/product/' + barcode;
   }
 }

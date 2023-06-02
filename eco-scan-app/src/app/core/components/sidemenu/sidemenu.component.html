@@ -7,7 +7,7 @@
     </button>
     <!-- Contenu du sidemenu -->
     <ul *ngIf="data">
-        <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100" *ngFor="let item of data">
+        <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100" *ngFor="let item of data" (click)="goToProduct(item.product.barcode)">
             <h2 class="text-lg font-bold mb-2">{{ item.product.name }}</h2>
             <p>{{ item.product.description }}</p>
             <p>Barcode: {{ item.product.barcode }}</p>

@@ -18,11 +18,11 @@ import { FormsModule } from '@angular/forms';
     SidemenuComponent,
     PageHomeComponent,
     ViewProductComponent
-    
+
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
 
   ],
   exports: [

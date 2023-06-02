@@ -36,7 +36,7 @@ export class CscanComponent {
             parsedData = [response];
           }
           localStorage.setItem('data', JSON.stringify(parsedData));
-          localStorage.setItem('barcode', this.barcodeInput);
+          localStorage.setItem('barcode', barcode);
         });
         window.location.href = '/product/' + this.barcodeInput;
     }
@@ -47,5 +47,5 @@ export class CscanComponent {
     return regex.test(codeBar);
   }
 
- 
+
 }
