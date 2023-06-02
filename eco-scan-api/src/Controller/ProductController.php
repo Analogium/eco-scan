@@ -139,6 +139,10 @@ class ProductController extends AbstractController
             $errors['electricVoltage'] = "Electric voltage is required";
         }
 
+        if (!isset($datas['type'])) {
+            $errors['type'] = "Type is required";
+        }
+
         if (count($errors) > 0) {
             return $this->json([
                 'errors' => $errors
@@ -154,6 +158,7 @@ class ProductController extends AbstractController
         $product->setElectricPower($datas['electricPower']);
         $product->setElectricCurrent($datas['electricCurrent']);
         $product->setElectricVoltage($datas['electricVoltage']);
+        $product->setType($datas['type']);
 
         $this->entityManager->persist($product);
         $this->entityManager->flush();
@@ -222,6 +227,10 @@ class ProductController extends AbstractController
             $errors['electricVoltage'] = "Electric voltage is required";
         }
 
+        if (!isset($datas['type'])) {
+            $errors['type'] = "Type is required";
+        }
+
         if (count($errors) > 0) {
             return $this->json([
                 'errors' => $errors
@@ -234,12 +243,43 @@ class ProductController extends AbstractController
         $product->setElectricPower($datas['electricPower']);
         $product->setElectricCurrent($datas['electricCurrent']);
         $product->setElectricVoltage($datas['electricVoltage']);
+        $product->setType($datas['type']);
 
         $this->entityManager->persist($product);
         $this->entityManager->flush();
 
         return $this->json([
             'product' => $product
+        ]);
+    }
+
+    #[Route('/best/{barcode}', name: 'best', methods: ['GET'])]
+    #[OA\Response(
+        response: 200,
+        description: "Success",
+        content: new Model(
+            type: Product::class
+        )
+    )]
+    #[OA\Parameter(
+        name: "barcode",
+        in: 'path',
+        description: "Product barcode",
+        required: true,
+        schema: new OA\Schema(type: 'string')
+    )]
+    public function best(string $barcode): JsonResponse
+    {
+        $product = $this->productRepository->findOneBy(['barcode' => $barcode]);
+        if (!$product) {
+            throw $this->createNotFoundException('No product found for barcode '.$barcode);
+        }
+
+        $bestElectricPower = $this->productRepository->findBestElectricPower($product);
+
+        return $this->json([
+            'product' => $product,
+            'bestElectricPower' => $bestElectricPower
         ]);
     }
 }
