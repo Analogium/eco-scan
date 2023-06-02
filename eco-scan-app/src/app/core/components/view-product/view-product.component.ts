@@ -1,10 +1,53 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-view-product',
   templateUrl: './view-product.component.html',
   styleUrls: ['./view-product.component.scss']
+
 })
 export class ViewProductComponent {
+
+  public electricPower: number = 0;
+  public electricCurrent: number = 0;
+  public electricVoltage: number = 0;
+  public electricFrequency: number = 0;
+  public bestProduct: string = '';
+  public maxPower: number = 5000;
+  public barcode: string = '';
+
+  public data: any = null;
+ 
+  
+
+  constructor(private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.data = localStorage.getItem('data');
+    if(this.data)
+      this.data = JSON.parse(this.data);
+    console.log(this.data[0].product);
+
+    const referencePower = 2000; // Consommation moyenne de puissance électrique en watts
+      const referenceCurrent = 10; // Consommation moyenne de courant électrique en ampères
+      const referenceVoltage = 220; // Tension électrique moyenne en volts
+
+      this.electricPower = (parseFloat(this.data[0].product.electricPower) / referencePower) * 100;
+      this.electricCurrent = (parseFloat(this.data[0].product.electricCurrent) / referenceCurrent) * 100;
+      this.electricVoltage = (parseFloat(this.data[0].product.electricVoltage) / referenceVoltage) * 100;
+      this.bestProduct = this.data[0].bestElectricPower[0].name.toString();
+      this.barcode = this.data[0].bestElectricPower[0].barcode.toString();
+
+
+      console.log(this.bestProduct);
+      console.log(this.barcode);
+  }
+
+  redirecttobestproduct(){
+    window.location.href = '/product/' + this.barcode;
+  }
+  
+  
 
 }

@@ -37,6 +37,7 @@ export class CscanComponent {
           }
           localStorage.setItem('data', JSON.stringify(parsedData));
         });
+        window.location.href = '/product/' + this.barcodeInput;
     }
   }
 
@@ -44,4 +45,6 @@ export class CscanComponent {
     const regex = /^(\d{13})$/gm;
     return regex.test(codeBar);
   }
+
+ 
 }
