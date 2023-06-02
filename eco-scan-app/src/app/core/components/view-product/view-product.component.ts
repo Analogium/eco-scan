@@ -33,11 +33,16 @@ export class ViewProductComponent {
       const referenceCurrent = 10; // Consommation moyenne de courant électrique en ampères
       const referenceVoltage = 220; // Tension électrique moyenne en volts
 
-      this.electricPower = (parseFloat(this.data[0].product.electricPower) / referencePower) * 100;
-      this.electricCurrent = (parseFloat(this.data[0].product.electricCurrent) / referenceCurrent) * 100;
-      this.electricVoltage = (parseFloat(this.data[0].product.electricVoltage) / referenceVoltage) * 100;
-      this.bestProduct = this.data[0].bestElectricPower[0].name.toString();
-      this.barcode = this.data[0].bestElectricPower[0].barcode.toString();
+      console.log(localStorage.getItem('barcode'));
+      for (let i = 0; i < this.data; i++) {
+        if (this.data[i].product.barcode === localStorage.getItem('barcode')) {
+          this.electricPower = (parseFloat(this.data[i].product.electricPower) / referencePower) * 100;
+      this.electricCurrent = (parseFloat(this.data[i].product.electricCurrent) / referenceCurrent) * 100;
+      this.electricVoltage = (parseFloat(this.data[i].product.electricVoltage) / referenceVoltage) * 100;
+      this.bestProduct = this.data[i].bestElectricPower[0].name.toString();
+      this.barcode = this.data[i].bestElectricPower[0].barcode.toString();
+      }
+    }
 
 
       console.log(this.bestProduct);
@@ -45,6 +50,7 @@ export class ViewProductComponent {
   }
 
   redirecttobestproduct(){
+
     window.location.href = '/product/' + this.barcode;
   }
   
