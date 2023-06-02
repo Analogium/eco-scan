@@ -4,6 +4,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { CscanComponent } from './components/cscan/cscan.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { PageHomeComponent } from './components/page-home/page-home.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 
 
@@ -13,7 +14,8 @@ import { PageHomeComponent } from './components/page-home/page-home.component';
     NavComponent,
     CscanComponent,
     SidemenuComponent,
-    PageHomeComponent
+    PageHomeComponent,
+    ViewProductComponent
     
   ],
   imports: [
@@ -24,6 +26,7 @@ import { PageHomeComponent } from './components/page-home/page-home.component';
     NavComponent,
     CscanComponent,
     SidemenuComponent,
-    PageHomeComponent]
+    PageHomeComponent,
+    ViewProductComponent]
 })
 export class CoreModule { }

@@ -1,10 +1,29 @@
 <div class="fixed right-0 top-0 h-full bg-gray-200 w-64 p-4" *ngIf="isOpen">
     <h1 class="text-xl font-bold mb-4">Historique</h1>
     <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" (click)="hideMenu()"> 
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
     </button>
     <!-- Contenu du sidemenu -->
-    <!-- ... -->
-</div>
+    <ul>
+      <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100">
+        <h2 class="text-lg font-bold mb-2">Produit 1</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </li>
+      <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100">
+        <h2 class="text-lg font-bold mb-2">Produit 2</h2>
+        <p>Nulla facilisi. Phasellus nec sem non leo congue eleifend.</p>
+      </li>
+      <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100">
+        <h2 class="text-lg font-bold mb-2">Produit 3</h2>
+        <p>Curabitur sit amet neque faucibus, lacinia metus sed, ultrices turpis.</p>
+      </li>
+      <li class="border border-gray-300 p-4 mb-4 hover:bg-gray-100">
+        <h2 class="text-lg font-bold mb-2">Produit 4</h2>
+        <p>Sed aliquet massa id mi consequat, vitae varius lacus viverra.</p>
+      </li>
+    </ul>
+  </div>
+
+  
