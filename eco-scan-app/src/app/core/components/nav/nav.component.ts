@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -12,5 +11,10 @@ export class NavComponent {
 
   toggleSidemenu() {
     this.sidemenuOpen = !this.sidemenuOpen;
+  }
+
+  redirectHome() {
+    localStorage.removeItem('barcode')
+    window.location.href = '/';
   }
 }
